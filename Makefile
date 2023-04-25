@@ -3,7 +3,7 @@ build-lambda:
 
 deploy-lambda:
 	cargo lambda deploy \
-  	--iam-role arn:aws:iam::799522438486:role/lambda --binary-name lambda rust
+  	--iam-role ${LAMBDA_ARN} --binary-name lambda rust
 
 build-website:
 	pnpm run build --filter web
