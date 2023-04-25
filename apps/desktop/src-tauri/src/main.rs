@@ -6,7 +6,7 @@
 use rr_core::hello;
 
 #[tauri::command]
-fn hello_wrapper(name: String) -> String {
+fn hello_wrapper(name: &str) -> String {
     return hello(name);
 }
 

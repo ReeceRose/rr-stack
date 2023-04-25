@@ -19,7 +19,7 @@ struct Request {
 async fn root(Query(request): Query<Request>) -> Json<Value> {
     let name = request.name.unwrap_or("world".to_owned());
 
-    Json(json!({ "msg": hello(name) }))
+    Json(json!({ "msg": hello(&name) }))
 }
 
 pub async fn fallback(uri: axum::http::Uri) -> impl axum::response::IntoResponse {
